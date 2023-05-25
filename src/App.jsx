@@ -1,4 +1,12 @@
 import React, { useState } from "react";
+import { Correct } from "./components/Correct";
+import { Incorrect } from "./components/Incorrect";
+import { Input } from "./components/Input";
+import { Judge } from "./components/Judge";
+import { Question } from "./components/Question";
+import { Score } from "./components/Score";  
+import { Title } from "./components/Title";
+
 import "./style.css"
 
 export const App = () => {
@@ -68,73 +76,40 @@ export const App = () => {
   return(
     <>
     {/* タイトル */}
-    <div className="title-area">
-      <h1>歴史人物クイズ</h1>
-    </div>
-
+    <Title/>
+  
     {/* 出題エリア */}
-    <div className="question-area">
-      <h2>問題{index}</h2>
-      {/* 問題文のセッティング */}
-      <p>{question}</p>
-    </div>
+    <Question
+      index={index}
+      question={question}
+    />
 
     {/* 入力エリア */}
-    <div className="input-area">
-      <input 
-        placeholder="歴史人物を入力" 
-        onChange={onChangeInputText}
-        value={inpuText}
-      />
-      <button onClick={onClickSubmit}>回答</button>
-    </div>
+    <Input
+      onChange={onChangeInputText}
+      inpuText={inpuText}
+      onClick={onClickSubmit}
+    />
 
     {/* 正誤判定表示エリア */}
-    <div className="judge-area">
-      <h2>正誤判定</h2>
-      <p>{judgeFlag}</p>
-    </div>
+    <Judge
+      judgeFlag={judgeFlag}
+    />
 
     {/* 正解済みエリア */}
-    <div className="correct-area">
-      <h2>正解群</h2>
-      <ul className="correct-list">
-        {correctAnswers.map((answer) => {
-          return (
-            <>
-              <div key={answer} className="list-row">
-                <li>{answer}</li>
-              </div>
-            </>
-          );
-        })}
-      </ul>
-    </div>
+    <Correct
+      correctAnswers={correctAnswers}
+    />
     
     {/* 不正解エリア */}
-    <div className="incorrect-area">
-      <h2>不正解群</h2>
-      <ul className="correct-list">
-
-      {incorrectAnswers.map((answer) => {
-          return (
-            <>
-              <div key={answer} className="list-row">
-                <li>{answer}</li>
-              </div>
-            </>
-          );
-        })}
-  
-      </ul>
-    </div>
+    <Incorrect
+      incorrectAnswers={incorrectAnswers}
+    />
 
     {/* スコア */}
-    <div className="score-area">
-      <h2>スコア</h2>
-      <p>あなたのスコアは、</p>
-      <p>{score}</p>
-    </div>
+    <Score
+      score={score}
+    />
     </>
   );
 }

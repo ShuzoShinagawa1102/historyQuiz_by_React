@@ -1,0 +1,79 @@
+body {
+    font-family: sans-serif;
+}
+
+/* タイトル */
+.title-area h1 {
+    color: white;
+    text-align: center;
+    background-color: brown;
+    padding: 16px;
+    border-radius: 100px;
+}
+
+/* 出題エリア */
+.question-area h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.question-area p {
+    text-align: center;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+/* 入力エリア */
+.input-area {
+    text-align: center;
+}
+
+.input-area input {
+    font-size: large;
+    text-align: center;
+    padding: 30px;
+    background-color: azure;
+    border-radius: 100px;
+}
+
+button {
+    border-radius: 16px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+/* 正誤判定エリア */
+.judge-area {
+    background-color: cornflowerblue;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 100px;
+}
+
+/* 正解済みエリア */
+.correct-area {
+    background-color: greenyellow;
+    display: flex;
+    align-items: center;
+}
+/* 不正解エリア */
+.incorrect-area {
+    background-color: pink;
+    display: flex;
+    align-items: center;
+}
+
+.list-row {
+    display: flex;
+    align-items: center;
+    padding-bottom: 4px;
+}
+
+
+
+
+
+
+
+
